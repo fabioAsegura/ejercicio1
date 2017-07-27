@@ -24,18 +24,30 @@ public class ConjuntoLibros {
           if(conjunto[i]!=null){
           }else{
               conjunto[i]=libro;
+              break;
           }
       }
-      
-      
+ 
   }
   public void borrarLibro(String titulo){
-      
+       for (int i = 0; i < conjunto.length; i++) {
+           if(conjunto[i]!=null){
+           if(titulo.equals(conjunto[i].titulo)){
+               conjunto[i]=null;
+           }
+          }
+      }
   }
   public boolean comprobarLibro(String titulo){
-      
+       for (int i = 0; i < conjunto.length; i++) {
+           if(conjunto[i]!=null){
+           if(titulo.equals(conjunto[i].titulo)){
+              return true; 
+      }
+           } 
+          
+      }
+       return false;
   }
-  public Libro[] ListaLibros(){
-      
-  }
+ 
 }

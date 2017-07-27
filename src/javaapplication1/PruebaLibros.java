@@ -23,12 +23,11 @@ public class PruebaLibros {
         if(resp==1){
             System.out.println("digite el libro que va a ingresar");
             String libroI=leer.next();
-            leer.nextLine();
             ConjuntoLibros obj1=new ConjuntoLibros();
             if(obj1.comprobarLibro(libroI)==false){
                 System.out.println("digite el autor, num paginas y calificacion");
-                String Autor=leer.nextLine();
-                leer.next();
+                
+                String Autor=leer.next();
                 int numPag=leer.nextInt();
                 int calificacion=leer.nextInt();
                 obj1.añadirLibro(libroI,Autor,numPag,calificacion);
@@ -40,8 +39,8 @@ public class PruebaLibros {
         }
         if(resp==2){
             System.out.println("digite el libro que va a borrar");
-            String libroI=leer.next();
-            leer.next();
+            
+            String libroI=leer.next();    
             ConjuntoLibros obj1=new ConjuntoLibros();
             if(obj1.comprobarLibro(libroI)==true){
                 obj1.borrarLibro(libroI);
@@ -59,4 +58,6 @@ public class PruebaLibros {
         
     }
     }
+
+    
 }
