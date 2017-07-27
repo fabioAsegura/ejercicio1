@@ -12,6 +12,7 @@ package javaapplication1;
 import java.util.Scanner;
 public class PruebaLibros {
     public static void main(String[] args) {
+        int ContLibros=0;
         Scanner leer=new Scanner(System.in);
         int resp=0;
         while(resp==0){
@@ -31,6 +32,7 @@ public class PruebaLibros {
                 int numPag=leer.nextInt();
                 int calificacion=leer.nextInt();
                 obj1.añadirLibro(libroI,Autor,numPag,calificacion);
+                ContLibros++;
             }else{
                 System.out.println("ya existe el libro");
             }
@@ -51,8 +53,9 @@ public class PruebaLibros {
             resp=0;
         }
         if(resp==3){
-            
-            
+            System.out.println("lista de libros:\n");
+            ConjuntoLibros obj1=new ConjuntoLibros();
+            obj1.listaLibros(ContLibros);
             resp=0;
         }
         

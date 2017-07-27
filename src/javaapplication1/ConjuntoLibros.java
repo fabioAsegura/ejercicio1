@@ -21,9 +21,11 @@ public class ConjuntoLibros {
       libro.setCalificacion(Calificacion);
      
       for (int i = 0; i < conjunto.length; i++) {
-          if(conjunto[i]!=null){
-          }else{
+          if(conjunto[i]==null){
               conjunto[i]=libro;
+              break;
+          }else{
+              
               break;
           }
       }
@@ -49,5 +51,24 @@ public class ConjuntoLibros {
       }
        return false;
   }
- 
+  
+ public String listaLibros(int contLibros){
+     String librosC="";
+     
+     for (int j = 0; j < contLibros; j++) {
+      int calM=0;
+     int pos=0;
+         for (int i = 0; i < conjunto.length; i++) {
+         if(conjunto[i]!=null){
+             if(conjunto[i].Calificacion>calM){
+                 calM=conjunto[i].Calificacion;
+                 pos=i;
+             }
+         }
+     }
+     librosC=librosC+"titulo: "+conjunto[pos].titulo+"\n";
+    
+ }
+     return librosC;
+}
 }
